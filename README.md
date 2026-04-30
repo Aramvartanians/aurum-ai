@@ -1,1 +1,1 @@
-# aurum-ai
+# aurum.ai
