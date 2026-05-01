@@ -390,7 +390,7 @@ textarea::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2p
     <div class="logo-icon">Au</div>
     Aurum AI
   </div>
-  <div class="pill"><span class="dot"></span>gpt-4o-mini</div>
+  <div class="pill"><span class="dot"></span>claude-sonnet-4</div>
 </header>
 
 <main id="main">
@@ -398,7 +398,7 @@ textarea::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2p
     <div class="welcome" id="welcome">
       <div class="welcome-icon">Au</div>
       <h1>Hello, I'm <strong>Aurum AI</strong></h1>
-      <p>Your intelligent assistant, powered by GPT-4o mini. Ask me anything.</p>
+      <p>Your intelligent assistant, powered by Claude. Ask me anything.</p>
       <div class="starters">
         <button class="starter-btn" onclick="sendStarter(this)">Explain quantum entanglement simply</button>
         <button class="starter-btn" onclick="sendStarter(this)">Help me write a short poem</button>
@@ -503,18 +503,16 @@ async function submit() {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        model: 'gpt-4o-mini',
+        model: 'claude-sonnet-4-20250514',
         max_tokens: 1000,
-        messages: [
-          { role: 'system', content: 'You are Aurum AI, a thoughtful and articulate AI assistant. You are clear, warm, and concise. Respond naturally in plain text without markdown formatting.' },
-          ...history
-        ]
+        system: 'You are Aurum AI, a thoughtful and articulate AI assistant. You are clear, warm, and concise. Respond naturally in plain text without markdown formatting.',
+        messages: history
       })
     });
 
     const data = await res.json();
     typingWrap.remove();
-    const reply = data.choices?.[0]?.message?.content || 'Something went wrong — please try again.';
+    const reply = data.content?.[0]?.text || 'Something went wrong — please try again.';
     addMessage('ai', reply);
     history.push({ role: 'assistant', content: reply });
   } catch (err) {
