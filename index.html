@@ -7,7 +7,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500&family=Geist+Mono:wght@400&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
 :root {
   --bg: #080809;
   --gold: #d4a843;
@@ -21,7 +20,6 @@
   --text-dim: rgba(245,243,238,0.22);
   --user-bg: rgba(212,168,67,0.1);
 }
-
 body {
   background: var(--bg);
   color: var(--text);
@@ -33,7 +31,6 @@ body {
   overflow: hidden;
   position: relative;
 }
-
 body::before, body::after {
   content: '';
   position: fixed;
@@ -52,7 +49,6 @@ body::after {
   bottom: -150px; right: -100px;
   background: radial-gradient(circle, rgba(180,140,255,0.05) 0%, transparent 70%);
 }
-
 header {
   position: relative;
   z-index: 10;
@@ -64,7 +60,6 @@ header {
   backdrop-filter: blur(20px);
   background: rgba(8,8,9,0.7);
 }
-
 .logo {
   display: flex;
   align-items: center;
@@ -74,7 +69,6 @@ header {
   letter-spacing: -0.2px;
   color: var(--text);
 }
-
 .logo-icon {
   width: 30px; height: 30px;
   border-radius: 8px;
@@ -87,7 +81,6 @@ header {
   color: #1a1200;
   flex-shrink: 0;
 }
-
 .pill {
   display: flex;
   align-items: center;
@@ -100,19 +93,16 @@ header {
   border-radius: 100px;
   font-family: 'Geist Mono', monospace;
 }
-
 .dot {
   width: 5px; height: 5px;
   border-radius: 50%;
   background: #4ade80;
   animation: breathe 2.5s ease-in-out infinite;
 }
-
 @keyframes breathe {
   0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(74,222,128,0.4); }
   50% { opacity: 0.6; box-shadow: 0 0 0 4px rgba(74,222,128,0); }
 }
-
 main {
   flex: 1;
   overflow-y: auto;
@@ -120,11 +110,9 @@ main {
   z-index: 1;
   scroll-behavior: smooth;
 }
-
 main::-webkit-scrollbar { width: 3px; }
 main::-webkit-scrollbar-track { background: transparent; }
 main::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 2px; }
-
 .messages {
   max-width: 740px;
   margin: 0 auto;
@@ -133,7 +121,6 @@ main::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius
   flex-direction: column;
   gap: 24px;
 }
-
 .welcome {
   display: flex;
   flex-direction: column;
@@ -142,12 +129,10 @@ main::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius
   padding: 48px 0 24px;
   animation: rise 0.7s cubic-bezier(0.22,1,0.36,1) both;
 }
-
 @keyframes rise {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
 }
-
 .welcome-icon {
   width: 64px; height: 64px;
   border-radius: 18px;
@@ -161,7 +146,6 @@ main::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius
   margin-bottom: 24px;
   box-shadow: 0 0 40px rgba(212,168,67,0.2), 0 0 80px rgba(212,168,67,0.08);
 }
-
 .welcome h1 {
   font-size: 32px;
   font-weight: 400;
@@ -170,7 +154,6 @@ main::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius
   margin-bottom: 10px;
   line-height: 1.2;
 }
-
 .welcome h1 strong {
   font-weight: 500;
   background: linear-gradient(135deg, #d4a843, #f0c96a);
@@ -178,7 +161,6 @@ main::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
-
 .welcome p {
   font-size: 15px;
   color: var(--text-muted);
@@ -186,7 +168,6 @@ main::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius
   max-width: 340px;
   margin-bottom: 36px;
 }
-
 .starters {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -194,7 +175,6 @@ main::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius
   width: 100%;
   max-width: 480px;
 }
-
 .starter-btn {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -209,27 +189,22 @@ main::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius
   line-height: 1.45;
   transition: all 0.2s ease;
 }
-
 .starter-btn:hover {
   border-color: var(--border-gold);
   color: var(--text);
   background: var(--gold-glow);
   transform: translateY(-1px);
 }
-
 .message {
   display: flex;
   gap: 12px;
   animation: msgIn 0.3s cubic-bezier(0.22,1,0.36,1) both;
 }
-
 @keyframes msgIn {
   from { opacity: 0; transform: translateY(6px); }
   to { opacity: 1; transform: translateY(0); }
 }
-
 .message.user { flex-direction: row-reverse; }
-
 .avatar {
   width: 30px; height: 30px;
   border-radius: 8px;
@@ -242,19 +217,16 @@ main::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius
   margin-top: 2px;
   letter-spacing: 0.3px;
 }
-
 .avatar.ai {
   background: linear-gradient(135deg, #d4a843, #f0c96a);
   color: #1a1200;
   font-size: 11px;
 }
-
 .avatar.user-av {
   background: var(--surface);
   border: 1px solid var(--border);
   color: var(--text-muted);
 }
-
 .bubble {
   max-width: 80%;
   padding: 13px 16px;
@@ -263,28 +235,24 @@ main::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius
   line-height: 1.72;
   font-weight: 300;
 }
-
 .message.ai .bubble {
   background: var(--surface);
   border: 1px solid var(--border);
   color: var(--text);
   border-top-left-radius: 4px;
 }
-
 .message.user .bubble {
   background: var(--user-bg);
   border: 1px solid var(--border-gold);
   color: var(--text);
   border-top-right-radius: 4px;
 }
-
 .typing {
   display: flex;
   align-items: center;
   gap: 5px;
   padding: 4px 0;
 }
-
 .typing-dot {
   width: 5px; height: 5px;
   border-radius: 50%;
@@ -294,12 +262,10 @@ main::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius
 }
 .typing-dot:nth-child(2) { animation-delay: 0.15s; }
 .typing-dot:nth-child(3) { animation-delay: 0.3s; }
-
 @keyframes bounce {
   0%, 100% { opacity: 0.2; transform: translateY(0); }
   50% { opacity: 0.9; transform: translateY(-3px); }
 }
-
 footer {
   position: relative;
   z-index: 10;
@@ -308,9 +274,7 @@ footer {
   backdrop-filter: blur(20px);
   border-top: 1px solid var(--border);
 }
-
 .input-wrap { max-width: 740px; margin: 0 auto; }
-
 .input-box {
   display: flex;
   align-items: flex-end;
@@ -321,12 +285,10 @@ footer {
   padding: 10px 10px 10px 16px;
   transition: border-color 0.25s, box-shadow 0.25s;
 }
-
 .input-box:focus-within {
   border-color: var(--border-gold);
   box-shadow: 0 0 0 3px rgba(212,168,67,0.06);
 }
-
 textarea {
   flex: 1;
   background: transparent;
@@ -343,11 +305,9 @@ textarea {
   overflow-y: auto;
   caret-color: var(--gold);
 }
-
 textarea::placeholder { color: var(--text-dim); }
 textarea::-webkit-scrollbar { width: 3px; }
 textarea::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
-
 .send-btn {
   width: 36px; height: 36px;
   border-radius: 10px;
@@ -361,7 +321,6 @@ textarea::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2p
   transition: opacity 0.15s, transform 0.1s, box-shadow 0.2s;
   box-shadow: 0 2px 12px rgba(212,168,67,0.25);
 }
-
 .send-btn:hover { opacity: 0.9; box-shadow: 0 4px 20px rgba(212,168,67,0.35); }
 .send-btn:active { transform: scale(0.93); }
 .send-btn:disabled {
@@ -370,10 +329,8 @@ textarea::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2p
   cursor: not-allowed;
   border: 1px solid var(--border);
 }
-
 .send-btn svg { width: 15px; height: 15px; fill: #1a1200; }
 .send-btn:disabled svg { fill: var(--text-dim); }
-
 .hint {
   text-align: center;
   font-size: 11px;
@@ -384,7 +341,6 @@ textarea::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2p
 </style>
 </head>
 <body>
-
 <header>
   <div class="logo">
     <div class="logo-icon">Au</div>
@@ -392,7 +348,6 @@ textarea::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2p
   </div>
   <div class="pill"><span class="dot"></span>claude-sonnet-4</div>
 </header>
-
 <main id="main">
   <div class="messages" id="messages">
     <div class="welcome" id="welcome">
@@ -408,7 +363,6 @@ textarea::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2p
     </div>
   </div>
 </main>
-
 <footer>
   <div class="input-wrap">
     <div class="input-box">
@@ -420,7 +374,6 @@ textarea::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2p
     <p class="hint">↵ send · ⇧↵ newline</p>
   </div>
 </footer>
-
 <script>
 const messagesEl = document.getElementById('messages');
 const inputEl = document.getElementById('input');
@@ -433,14 +386,12 @@ inputEl.addEventListener('input', () => {
   inputEl.style.height = Math.min(inputEl.scrollHeight, 160) + 'px';
   sendBtn.disabled = !inputEl.value.trim() || isLoading;
 });
-
 inputEl.addEventListener('keydown', e => {
   if (e.key === 'Enter' && !e.shiftKey) {
     e.preventDefault();
     if (!sendBtn.disabled) submit();
   }
 });
-
 sendBtn.addEventListener('click', submit);
 
 function sendStarter(btn) {
@@ -448,7 +399,6 @@ function sendStarter(btn) {
   inputEl.dispatchEvent(new Event('input'));
   submit();
 }
-
 function addMessage(role, content) {
   if (welcomeEl && role === 'user') welcomeEl.style.display = 'none';
   const wrap = document.createElement('div');
@@ -465,7 +415,6 @@ function addMessage(role, content) {
   scrollDown();
   return bubble;
 }
-
 function addTyping() {
   const wrap = document.createElement('div');
   wrap.className = 'message ai';
@@ -482,11 +431,9 @@ function addTyping() {
   scrollDown();
   return wrap;
 }
-
 function scrollDown() {
   document.getElementById('main').scrollTop = 999999;
 }
-
 async function submit() {
   const text = inputEl.value.trim();
   if (!text || isLoading) return;
@@ -497,7 +444,6 @@ async function submit() {
   addMessage('user', text);
   history.push({ role: 'user', content: text });
   const typingWrap = addTyping();
-
   try {
     const res = await fetch('/api/chat', {
       method: 'POST',
@@ -509,7 +455,6 @@ async function submit() {
         messages: history
       })
     });
-
     const data = await res.json();
     typingWrap.remove();
     const reply = data.content?.[0]?.text || 'Something went wrong — please try again.';
@@ -519,7 +464,6 @@ async function submit() {
     typingWrap.remove();
     addMessage('ai', 'Connection error. Please try again.');
   }
-
   isLoading = false;
   sendBtn.disabled = !inputEl.value.trim();
   inputEl.focus();
